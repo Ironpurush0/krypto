@@ -1,9 +1,10 @@
 .list-container{
     width: 90%;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     height: auto;
     padding: 15px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-left: 25px;

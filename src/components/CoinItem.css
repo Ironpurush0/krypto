@@ -1,9 +1,18 @@
 .wrapper{
     width: 100%;
-    height: auto;
+    height: 8vh;
     display: flex;
     align-items: center;
+    margin: 10px;
+    border: 1px solid #A08A52;
+    color: #8A632D;
     justify-content: space-between;
-    background-color: cadetblue;
-    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.percent{
+    text-align: center;
+    display: flex;
+    align-items: center;
 }
