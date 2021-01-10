@@ -1,6 +1,5 @@
 import React, {useState, useEffect, useContext}from 'react'
 import CoinGecko from '../api'
-
 import './CoinList.css'
 
 import CoinItem from './CoinItem'
@@ -10,7 +9,7 @@ const CoinList = () => {
     const [coins, setCoins] = useState([])
     const [isLoading, setIsLoading] = useState(false)
 
-    const {watchList} = useContext(WatchListContext)
+    const {watchList, deleteCoin} = useContext(WatchListContext)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -28,8 +27,14 @@ const CoinList = () => {
             setIsLoading(false)
         }
 
-        fetchData()
-    }, [])
+        
+            fetchData()
+
+        // }else {
+        //     setCoins([])
+        // }
+        
+    }, [watchList])
 
     if(isLoading){
         return <p>LOADING</p>
@@ -39,7 +44,7 @@ const CoinList = () => {
         <div className="list-container">
             {
                 coins.map(coin => (
-                    <CoinItem percent={coin.market_cap_change_percentage_24h} color={coin.market_cap_change_percentage_24h > 0 ? "green" : "red"} price={coin.current_price} image={coin.image} />
+                        <CoinItem key={coin.id} coin={coin} deleteCoin={deleteCoin} />
                 ))
             }
         </div>

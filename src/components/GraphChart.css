@@ -1,0 +1,8 @@
+.graph-Container {
+    width: 95%;
+    height: 500px;
+    padding: 15px;
+    border: 1px solid #DDEDF4;
+    /* margin-top: 2%; */
+    color: white;
+}

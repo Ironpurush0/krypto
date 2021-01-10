@@ -1,21 +1,20 @@
 .container{
     width: 70%;
-    height: 80vh;
-    border: 1px solid black;
+    height: 100%;
     padding: 15px;
-    border: 1px solid #A3A1A2;
+    border: 1px solid #DDEDF4;
     margin-top: 5%;
     color: white;
 }
 
 .button{
-    background-color: #DCC4BD;
+    background-color: #44449B;
     padding: 7px;
     border: none;
     transition: .5s;
     cursor: pointer;
     box-shadow: inset;
-    color: white;
+    color: #DDEDF4;
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 25px;
