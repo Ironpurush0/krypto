@@ -11,6 +11,7 @@ import './Details.css'
 const Details = () => {
     const [chartData, setChartData] = useState({})
     const [isLoading, setIsLoading] = useState(true)
+
     const {id} = useParams()
 
     const formatData = data => {
@@ -62,32 +63,14 @@ const Details = () => {
         fetchData()
     }, [])
 
-    console.log(chartData)
-
     if(isLoading){
         return <h1 style={{color: "white"}}>Loading...</h1>
     }
     
     return (
         <div className="graphContainer">
+            <h1 style={{color: "#44449B"}}>{chartData.detail.name}</h1>
             <GrapChart data={chartData} />
-            <div className="metaInfoContainer">
-                <div className="buttonContainer">
-                    <button className="btn">1d</button>
-                    <button className="btn">7d</button>
-                    <button className="btn">1y</button>
-                </div>
-                <div className="priceTracker">
-                    <h1>{chartData.detail.current_price.toFixed(2)} $</h1>
-                    <p 
-                        style={
-                            {
-                                fontSize: "20px", 
-                                color: chartData.detail.price_change_24h < 0 ? "red" : "green"}}>
-                                    {chartData.detail.price_change_24h.toFixed(2)} %
-                    </p>
-                </div>
-            </div>
             <CoinData data={chartData} />
         </div>
     )
