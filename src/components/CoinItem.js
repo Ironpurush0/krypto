@@ -17,6 +17,7 @@ const CoinItem = ({coin, deleteCoin}) => {
         }} className="wrapper">
         <div className="wrapper">
                 <img src={coin.image} alt="image" width={45} height={45} />
+                <p>{coin.name}</p>
                     <p>{coin.current_price}</p>
                     <p style={{color : coin.price_change_percentage_24h > 0 ? "green" : "red"}} className="percent">
                         <span>{coin.price_change_percentage_24h > 0 ? <RiArrowUpSFill /> : <AiOutlineCaretDown />}</span>

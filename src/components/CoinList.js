@@ -9,7 +9,7 @@ const CoinList = () => {
     const [coins, setCoins] = useState([])
     const [isLoading, setIsLoading] = useState(false)
 
-    const {watchList, deleteCoin} = useContext(WatchListContext)
+    const {watchList, deleteCoin, currencies} = useContext(WatchListContext)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -27,14 +27,18 @@ const CoinList = () => {
             setIsLoading(false)
         }
 
-        
+        if(watchList.length > 0){
             fetchData()
-
-        // }else {
-        //     setCoins([])
-        // }
+        } else {
+        setCoins([])
+        }
         
     }, [watchList])
+
+    if(!watchList.length){
+        return <p>No Coins to show.</p>
+    }
+
 
     if(isLoading){
         return <p>LOADING</p>

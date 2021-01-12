@@ -30,7 +30,7 @@ const CoinData = ({data}) => {
             <div className="item">
                 <p style={{color: "#DDEDF4", display: "flex", flexDirection: "column"}}>
                     Market Cap
-                    <span>{detail.market_cap} Rs</span>
+                    <span>{detail.market_cap}</span>
                 </p>
                 <p style={{display: "flex", flexDirection: "column"}}>
                     Market Cap change 24h
